@@ -1,4 +1,11 @@
 terraform {
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "leslie-test"
+    workspaces {
+      name = "leslie-test-workspace"
+    }
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
